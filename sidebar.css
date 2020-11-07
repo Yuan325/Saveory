@@ -1,0 +1,31 @@
+	body {font-family: Arial, Helvetica, sans-serif;}
+	/* The Modal (background) */
+.modal {
+  position: fixed; /* Stay in place */
+	display: block;
+  z-index: 99; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  right: 0;
+  top: 0;
+  width: 200px; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: gray;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
