@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+
+  "name": "Recipe generator",
+  "description": "This extension will show suggested recipes",
+  "version": "1.0",
+
+  "browser_action": {
+   "default_icon": "icon.png",
+   "default_popup": "popup.html"
+  },
+	"content_scripts": [
+		{
+			"matches":["*://www.google.com/*"],
+			"js": ["content.js", "jquery.js"]
+		}
+	],
+	"background":{
+		"scripts":["jquery.js","background.js"]
+	},
+	"web_accessible_resources":[
+		"test.html"
+	],
+  "permissions": [
+   "tabs"
+   ]
+}
