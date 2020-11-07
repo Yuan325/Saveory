@@ -10,11 +10,12 @@ function grabTitle(){
 	}
 }
 
+var link="";
 
 function onWindowLoad(){
 	console.log("welcome here!");
-
-	var link= window.location.toString();
+	link= window.location.toString();
+	console.log(link);
 	if (link.includes("?ps=1")){
 		grabTitle();
 
@@ -35,7 +36,10 @@ function onWindowLoad(){
 		});
 
 	}else{
-			
+		var modal = document.getElementById("myModal");
+		if (modal != null){
+			modal.style.display="none";
+		}
 		console.log('not in the page');
 	}
 
@@ -48,4 +52,9 @@ function onWindowLoad(){
 
 request.send()
 window.onload = onWindowLoad;
-window.addEventListener("click", function(){ onWindowLoad(); });
+window.addEventListener("click", function(){
+	var newLink = window.location.toString();
+	if(link != newLink){
+		onWindowLoad(); 
+	}
+});
