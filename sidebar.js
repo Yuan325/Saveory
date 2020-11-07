@@ -10,7 +10,6 @@ logo.src = logoURL;
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
-  console.log('click button');
   modal.style.display = "none";
 }
 
