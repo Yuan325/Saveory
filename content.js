@@ -42,8 +42,24 @@ function onWindowLoad(){
 		}
 		console.log('not in the page');
 	}
+
+	//API Request information
+	var request = new XMLHttpRequest();
+	request.open('GET', 'https://api.spoonacular.com/recipes/complexSearch', true);
+	request.onload = function(){
+		var data = JSON.parse(this.response);
+		if (request.status >= 200 && request.status < 400){
+			data.forEach((result) => {
+				console.log(title);
+			})
+		}
+		else{
+			console.log("Error displaying recipes.");
+		}
+	}
 }
 
+request.send();
 window.onload = onWindowLoad;
 window.addEventListener("click", function(){
 	var newLink = window.location.toString();
