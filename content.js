@@ -43,14 +43,14 @@ function onWindowLoad(){
 		console.log('not in the page');
 	}
 
-	var request = new XMLHttpRequest()
-	request.open('GET', 'https://api.spoonacular.com/recipes/complexSearch', true)
+	var request = new XMLHttpRequest();
+	request.open('GET', 'https://api.spoonacular.com/recipes/complexSearch', true);
 	request.onload = function(){
 
 	}
 }
 
-request.send()
+request.send();
 window.onload = onWindowLoad;
 window.addEventListener("click", function(){
 	var newLink = window.location.toString();
