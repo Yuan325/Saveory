@@ -10,6 +10,8 @@ When people order food online (in this case, UberEats) and click on a menu item,
 
 Users who are undecided about their next meal can also click on Saveory's chrome extension for a random recipe recommendation.
 
+##### App Demo: https://www.youtube.com/watch?v=KH-ky_g5vdk
+
 #### Pop up that appears at the side of website when it detects a food item:<br>
 <img src="/demo/side_popup.png" alt="side pop up" width=500> <br>
 <img src="/demo/side_popup1.png" alt="side pop up" width=200> &ensp;
