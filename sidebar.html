@@ -1,3 +1,4 @@
+<link href='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css' rel='stylesheet'>
 <div id="myModal" class="modal">
   <!-- Modal content -->
   <div class="modal-content">
@@ -7,27 +8,21 @@
       <span id="model-close-button" class="close">&times;</span>
     </div>
     <div class="recipe">
-      <img src='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/logo.png' class="recipe-img" alt="Recipe">
-			<p class="right-text">We have a recipe for you!</p>
+      <img id="rImage" src='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/logo.png' class="recipe-img" alt="Recipe">
+			<p class="right-text" id="rDesc">Searching for a recipe...</p>
     </div>
 		
     <div class="section">
 			<div id="rTitle"></div>
-			<div id="rImage"></div>
 			<div id="rPrice"></div>
       <strong>Ingredients</strong>
-      <hr>
-      <!-- for each restriction -->
-      <div class="ingredient">Item 1</div>
-      <div class="ingredient">Item 2</div>
-      <div class="ingredient">Item 3</div>
-      <!-- otherwise None -->
-			<div id="rIng"></div>
-			<div id="rIns"></div>
-    </div>
+      <hr class="recipeLine">
+			<div id="rIng">Searching...</div>
     <div class="section">
       <strong>Recipe</strong>
-      <hr>
+      <hr class="recipeLine">
+			<div id="rIns">Searching...</div>
+    </div>
     </div>
   </div>
 

@@ -14,5 +14,4 @@ function myFunction() {
   var md = document.getElementById("myModal");
   md.classList.toggle("show");
   console.log("hi");
-  getRecipe();
 }

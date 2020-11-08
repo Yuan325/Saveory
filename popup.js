@@ -1,10 +1,7 @@
 async function getRecipe(){ 
 	let url = "https://api.spoonacular.com/recipes/random?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&number=1&tags=meat"
 	let response = await fetch(url);
-	console.log(response);
-	
 	let json = await response.json();
-
 
 	let image=json['recipes'][0].image;
 	let title=json['recipes'][0].title;
