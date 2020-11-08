@@ -6,11 +6,9 @@ function grabTitle() {
 	if(h1s.length  > 1){
 		myH1 = h1s[1].innerHTML;
 		console.log(myH1);
-
+/*
 		var unirest = require("unirest");
-
 		var req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search");
-
 		req.query({
 			"query": myH1
 		});
@@ -21,12 +19,11 @@ function grabTitle() {
 			"useQueryString": true
 		});
 
-
 		req.end(function (res) {
 			if (res.error) throw new Error(res.error);
 			console.log(res.body);
 		});
-
+*/
 	} else {
 		console.log('title not found');
 	}
@@ -41,11 +38,11 @@ function onWindowLoad() {
 
 		var style = document.createElement("link");
 		style.rel = "stylesheet";
-		style.href = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.css";
+		style.href = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css";
 		document.head.appendChild(style);
 
 		var javascript = document.createElement("script");
-		javascript.src = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.js";
+		javascript.src = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js";
 		document.head.appendChild(javascript);
 
 		var div = document.createElement("div");
