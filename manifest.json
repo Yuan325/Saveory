@@ -14,7 +14,8 @@
 			],
 			"js": [
 				"content.js",
-				"jquery.js"
+				"jquery.js",
+				"require.js"
 			]
 		}
 	],
