@@ -14,27 +14,15 @@ function myFunction() {
   var md = document.getElementById("myModal");
   md.classList.toggle("show");
   console.log("hi");
-  grabTitle();
 }
 
-function grabTitle() {
-	var h1s = document.getElementsByTagName("h1");
-	var myH1;
-	if(h1s.length  > 1){
-		myH1 = h1s[1].innerHTML;
-		console.log(myH1);
-    getRecipe();
-  
-  } else {
-		console.log('title not found');
-	}
-}
+var tester;
+async function getRecipe(){
+    let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=d0a7d07b344b4d6a8d5704629d211616&query=";
+    url += myH1 + "&number=1&instructionsRequired=true";
+    let response = await fetch(url);
+    console.log(response);
+      
+    let json = await response.json(); 
 
-async function getRecipe() {
-	console.log("getting recipe");
-	let url = "https://api.spoonacular.com/recipes/random?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&number=1&tags=meat"
-	let response = await fetch(url);
-	console.log(response);
-	
-	let json = await response.json();
 }

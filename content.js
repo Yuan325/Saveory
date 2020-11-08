@@ -1,7 +1,7 @@
 
+var myH1;
 function grabTitle() {
 	var h1s = document.getElementsByTagName("h1");
-	var myH1;
 	if(h1s.length  > 1){
 		myH1 = h1s[1].innerHTML;
 		console.log(myH1);
@@ -20,11 +20,11 @@ function onWindowLoad() {
 
 		var style = document.createElement("link");
 		style.rel = "stylesheet";
-		style.href = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css";
+		style.href = "chrome-extension://amejifdccflcjabhckcmecocikckafll/sidebar.css";
 		document.head.appendChild(style);
 
 		var javascript = document.createElement("script");
-		javascript.src = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js";
+		javascript.src = "chrome-extension://amejifdccflcjabhckcmecocikckafll/sidebar.js";
 		document.head.appendChild(javascript);
 
 		var div = document.createElement("div");
