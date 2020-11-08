@@ -4,7 +4,7 @@ function myFunction() {
 
 async function getRecipe() {
 	console.log("getting recipe");
-	/*let url = "https://api.spoonacular.com/recipes/random?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&number=1&tags=meat"
+/*	let url = "https://api.spoonacular.com/recipes/random?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&number=1&tags=meat"
 	let response = await fetch(url);
 	console.log(response);
 	
@@ -13,7 +13,8 @@ async function getRecipe() {
 let json={
     "recipes": [
         {
-            "extendedIngredients": [
+          "pricePerServing": 164.92,  
+					"extendedIngredients": [
                 {
                     "id": 4053,
                     "aisle": "Oil, Vinegar, Salad Dressing",
@@ -459,7 +460,9 @@ let json={
 
 	let image=json['recipes'][0].image;
 	let title=json['recipes'][0].title;
-	let summary = json['recipes'][0].summary;
+	let price=json['recipes'][0].pricePerServing;
+	price = price/100;
+	price = parseFloat(price).toFixed(2);
 	let instruction = json['recipes'][0].analyzedInstructions[0].steps;
 	var insList = "<ol>";
 	for(ins of instruction){
@@ -468,7 +471,6 @@ let json={
 	insList+="</ol>";
 
 	let ingredients = json['recipes'][0].extendedIngredients;
-	console.log(title);
 
 	var ing;
 	var food="";
@@ -478,16 +480,32 @@ let json={
 		food += " " + ing['name'] + "<br>";
 	}
 
-	
-	
 	var titlediv=document.getElementById("recipeTitle");
 	titlediv.innerHTML=title;
+	titlediv.style.display="block";
+
+	var recipePrice=document.getElementById("recipePrice");
+	recipePrice.innerHTML="$ " + price.toString() + " per serving";
+	recipePrice.style.display="inline-block";
+
+	var priceImg=document.getElementById("priceImg");
+	priceImg.style.display="inline-block";
 
 	var ingredientdiv=document.getElementById("ingredientsList");
 	ingredientdiv.innerHTML=food;
+	ingredientdiv.style.display="block";
 
 	var instrucdiv=document.getElementById("recipeInstruc");
 	instrucdiv.innerHTML=insList;
+	instrucdiv.style.display="block";
+
+	var line1=document.getElementById("line1");
+	line1.style.display="block";
+
+	var recipeImg=document.getElementById("recipeImg");
+	recipeImg.src=image;
+	recipeImg.style.display="block";
+
 };
 
 let randomButton = document.getElementById("randomRecipe");

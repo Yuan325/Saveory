@@ -20,11 +20,11 @@ function onWindowLoad() {
 
 		var style = document.createElement("link");
 		style.rel = "stylesheet";
-		style.href = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.css";
+		style.href = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css";
 		document.head.appendChild(style);
 
 		var javascript = document.createElement("script");
-		javascript.src = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.js";
+		javascript.src = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js";
 		document.head.appendChild(javascript);
 
 		var div = document.createElement("div");
