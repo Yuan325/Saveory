@@ -5,6 +5,27 @@ function grabTitle(){
 	if(h1s.length  > 1){
 		myH1 = h1s[1];
 		console.log(myH1);
+
+		var unirest = require("unirest");
+
+		var req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search");
+
+		req.query({
+			"query": myH1
+		});
+
+		req.headers({
+			"x-rapidapi-key": "b803d108d1mshfb0db75b581d34dp11f869jsn4cc93cab1d05",
+			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+			"useQueryString": true
+		});
+
+
+		req.end(function (res) {
+			if (res.error) throw new Error(res.error);
+
+			console.log(res.body);
+		});
 	}else{
 		console.log('title not found');
 	}
@@ -42,32 +63,7 @@ function onWindowLoad(){
 		}
 		console.log('not in the page');
 	}
-	var unirest = require("unirest");
-
-var req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search");
-
-req.query({
-	"query": "burger",
-	"diet": "vegetarian",
-	"excludeIngredients": "coconut",
-	"intolerances": "egg, gluten",
-	"number": "10",
-	"offset": "0",
-	"type": "main course"
-});
-
-req.headers({
-	"x-rapidapi-key": "b803d108d1mshfb0db75b581d34dp11f869jsn4cc93cab1d05",
-	"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-	"useQueryString": true
-});
-
-
-req.end(function (res) {
-	if (res.error) throw new Error(res.error);
-
-	console.log(res.body);
-});
+	
 
 }
 
