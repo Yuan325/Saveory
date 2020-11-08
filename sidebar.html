@@ -2,15 +2,19 @@
   <!-- Modal content -->
   <div class="modal-content">
     <div class="header">
-      <img src='chrome-extension://amejifdccflcjabhckcmecocikckafll/logo.png' class="logo" alt="Logo">
-      <img src='chrome-extension://amejifdccflcjabhckcmecocikckafll/logo-txt.png' class="brand" alt="Saveory">
+      <img src='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/logo.png' class="logo" alt="Logo">
+      <img src='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/logo-txt.png' class="brand" alt="Saveory">
       <span id="model-close-button" class="close">&times;</span>
     </div>
     <div class="recipe">
-      <img src='chrome-extension://amejifdccflcjabhckcmecocikckafll/logo.png' class="recipe-img" alt="Recipe">
-      <p class="right-text">We have a recipe for you!</p>
+      <img src='chrome-extension://kijkgialngobgddnhoalinmjegeafmce/logo.png' class="recipe-img" alt="Recipe">
+			<p class="right-text">We have a recipe for you!</p>
     </div>
+		
     <div class="section">
+			<div id="rTitle"></div>
+			<div id="rImage"></div>
+			<div id="rPrice"></div>
       <strong>Ingredients</strong>
       <hr>
       <!-- for each restriction -->
@@ -18,6 +22,8 @@
       <div class="ingredient">Item 2</div>
       <div class="ingredient">Item 3</div>
       <!-- otherwise None -->
+			<div id="rIng"></div>
+			<div id="rIns"></div>
     </div>
     <div class="section">
       <strong>Recipe</strong>
@@ -26,4 +32,4 @@
   </div>
 
 </div>
-<script type="text/javascript" src="popup.js"></script>
+<script type="text/javascript" src="chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js"></script>

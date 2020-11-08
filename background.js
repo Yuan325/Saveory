@@ -1,3 +1,5 @@
+var foodName="";
+
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
     if(request.cmd == "read_file") {
         $.ajax({
@@ -5,6 +7,8 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             dataType: "html",
             success: sendResponse
         });
+				foodName = request.foodName;
        return true;
     }
 })
+

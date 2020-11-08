@@ -16,14 +16,3 @@ function myFunction() {
   console.log("hi");
   getRecipe();
 }
-
-var myH1;
-async function getRecipe(){
-    let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=d0a7d07b344b4d6a8d5704629d211616&query=";
-    url += myH1 + "&number=1&instructionsRequired=true";
-    let response = await fetch(url);
-    console.log(response);
-      
-    let json = await response.json(); 
-
-}

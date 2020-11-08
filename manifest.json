@@ -28,7 +28,8 @@
 		"sidebar.css",
 		"sidebar.js",
 		"logo.png",
-		"logo-txt.png"
+		"logo-txt.png",
+		"background.js"
 	],
 	"permissions": [
 		"tabs"
