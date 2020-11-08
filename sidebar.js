@@ -4,6 +4,13 @@ var modal = document.getElementById("myModal");
 var span = document.getElementById("model-close-button");
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function() {
+span.onclick = function () {
   modal.style.display = "none";
+}
+
+// When the user clicks on <div>, open the modal
+function myFunction() {
+  var md = document.getElementById("myModal");
+  md.classList.toggle("show");
+  console.log("hi");
 }

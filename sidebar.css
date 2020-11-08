@@ -1,31 +1,111 @@
-	body {font-family: Arial, Helvetica, sans-serif;}
+body {font-family: Arial, Helvetica, sans-serif;}
 	/* The Modal (background) */
 .modal {
   position: fixed; /* Stay in place */
 	display: block;
   z-index: 99; /* Sit on top */
   padding-top: 100px; /* Location of the box */
+  padding-right: 10px; /* shift box left */
   right: 0;
   top: 0;
-  width: 200px; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
+  width: 300px; /* Full width */
+  border-radius: 10px;
+  overflow: hidden; /* Enable scroll if needed */
 }
 
 /* Modal Content */
 .modal-content {
-  background-color: gray;
+  background-color: white;
   margin: auto;
-  padding: 20px;
-  border: 1px solid #888;
+  padding: 10px;
+  border: 3px solid #3d7923;
   width: 80%;
+  border-radius: 30px;
+  height: 150px;
+  overflow: hidden;
+}
+
+.header {
+  padding: 0px 0px;
+  display: inline-block;
+  overflow: hidden; /* resize box to fit contents */
+}
+
+.logo {
+  display: block;
+  width: 20%;
+  height: auto;
+  text-align: center;
+  float: left;
+}
+
+.brand {
+  display: block;
+  width: 30%;
+  height: auto;
+  text-align: center;
+  padding: 5%;
+  float: left;
+}
+
+.section {
+/* where the logo + name of product is shown */
+  padding-bottom: 5px;
+  margin: 5px;
+  overflow: hidden;
+}
+
+.recipe {
+  /* green box with recipe img */
+  background-color: #d9ead3ff;
+  border-radius: 20px;
+  padding: 10px 5%; /* top/bot sides */
+  margin-bottom: 20px;
+  display: block;
+  overflow: hidden;
+}
+
+.right-text {
+  /* position: absolute; */
+  top: 50%;
+  /* left: 0; */
+  width: 50%;
+  height: 80px;
+  display: flex;
+  float: right;
+  align-items: center;
+}
+
+.recipe-img {
+  height: auto;
+  width: 50%;
+  display: block;
+  text-align: center;
+  float: left;
+}
+
+.diet-item {
+  display: block;
+  border-radius: 10px;
+  height: 20px;
+  width: fit-content;
+  padding: 1px 5px;
+  border: 2px solid #6aa84f;
 }
 
 /* The Close Button */
 .close {
+  display: block;
   color: #aaaaaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
+  width: 10%;
+  top: 0;
 }
 
+/* Show detail when hovering */
+.modal-content:hover {
+  height: 400px;
+  overflow: auto;
+}

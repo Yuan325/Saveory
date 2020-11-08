@@ -1,66 +1,74 @@
 
-function grabTitle(){
+
+function grabTitle() {
 	var h1s = document.getElementsByTagName("h1");
 	var myH1;
 	if(h1s.length  > 1){
 		myH1 = h1s[1].innerHTML;
 		console.log(myH1);
-	}else{
+
+		var unirest = require("unirest");
+
+		var req = unirest("GET", "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/search");
+
+		req.query({
+			"query": myH1
+		});
+
+		req.headers({
+			"x-rapidapi-key": "b803d108d1mshfb0db75b581d34dp11f869jsn4cc93cab1d05",
+			"x-rapidapi-host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+			"useQueryString": true
+		});
+
+
+		req.end(function (res) {
+			if (res.error) throw new Error(res.error);
+			console.log(res.body);
+		});
+
+	} else {
 		console.log('title not found');
 	}
 }
 
-var link="";
+var link = "";
 
-function onWindowLoad(){
-	link= window.location.toString();
-	if (link.includes("?ps=1")){
+function onWindowLoad() {
+	link = window.location.toString();
+	if (link.includes("?ps=1")) {
 		grabTitle();
 
-		var style=document.createElement("link");
-		style.rel="stylesheet";
-		style.href="chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css";
+		var style = document.createElement("link");
+		style.rel = "stylesheet";
+		style.href = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.css";
 		document.head.appendChild(style);
 
-		var javascript=document.createElement("script");
-		javascript.src="chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js";
+		var javascript = document.createElement("script");
+		javascript.src = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.js";
 		document.head.appendChild(javascript);
 
-		var div=document.createElement("div");
-		div.id="sidebar";
+		var div = document.createElement("div");
+		div.id = "sidebar";
 		document.body.appendChild(div);
-		chrome.runtime.sendMessage({cmd: "read_file"}, function(html){
+		chrome.runtime.sendMessage({ cmd: "read_file" }, function (html) {
 			$("#sidebar").html(html);
 		});
 
-	}else{
+	} else {
 		var modal = document.getElementById("myModal");
-		if (modal != null){
-			modal.style.display="none";
+		if (modal != null) {
+			modal.style.display = "none";
 		}
 	}
 
-	//API Request information
-	var request = new XMLHttpRequest();
-	request.open('GET', 'https://api.spoonacular.com/recipes/complexSearch', true);
-	request.onload = function(){
-		var data = JSON.parse(this.response);
-		if (request.status >= 200 && request.status < 400){
-			data.forEach((result) => {
-				console.log(title);
-			})
-		}
-		else{
-			console.log("Error displaying recipes.");
-		}
-	}
+
 }
 
-//request.send();
 window.onload = onWindowLoad;
-window.addEventListener("click", function(){
+window.addEventListener("click", function () {
 	var newLink = window.location.toString();
-	if(link != newLink){
-		onWindowLoad(); 
+	if (link != newLink) {
+		onWindowLoad();
 	}
 });
