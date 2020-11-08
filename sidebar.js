@@ -5,7 +5,7 @@ var span = document.getElementById("model-close-button");
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function () {
-  modal.style.display = "sidebar.css";
+  modal.style.display = "none";
   myFunction();
 }
 
@@ -14,9 +14,10 @@ function myFunction() {
   var md = document.getElementById("myModal");
   md.classList.toggle("show");
   console.log("hi");
+  getRecipe();
 }
 
-var tester;
+var myH1;
 async function getRecipe(){
     let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=d0a7d07b344b4d6a8d5704629d211616&query=";
     url += myH1 + "&number=1&instructionsRequired=true";
