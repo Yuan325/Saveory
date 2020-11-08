@@ -12,7 +12,7 @@
 	"content_scripts": [
 		{
 			"matches":["*://www.ubereats.com/*"],
-			"js": ["content.js", "jquery.js"]
+			"js": ["content.js", "jquery.js", "require.js"]
 		}
 	],
 	"background":{
