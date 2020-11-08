@@ -1,4 +1,5 @@
 
+
 function grabTitle(){
 	var h1s = document.getElementsByTagName("h1");
 	var myH1;
@@ -23,9 +24,9 @@ function grabTitle(){
 
 		req.end(function (res) {
 			if (res.error) throw new Error(res.error);
-
 			console.log(res.body);
 		});
+	
 	}else{
 		console.log('title not found');
 	}
