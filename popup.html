@@ -1,27 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Saveory</title>
-        <link rel="stylesheet" href="popup.css" />
-    </head>
-    <body>
-        <div class="container">
-					<img id="popupLogo" src="assets/name.png" alt="logo" >	
-					<center>Generate random recipe for your meal! </center>
-					<hr class="line">
-					<button class="button" id="randomRecipe" type="button">Random Recipe!</button>
-					<div id="recipeTitle"></div>
-					<img id="recipeImg" alt="recipe image">
-					<img id="priceImg" src="assets/logo.png" alt="logo">
-					<span id="recipePrice"></span>
-					<div id="ingredientsList"></div>
-					<hr id="line1" class="line">
-					<div id="recipeInstruc"></div>
-					<hr id="line2" class="line">
-        </div>
-    </body>
-        <script type="text/javascript" src="popup.js"></script>
-</html>
 
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saveory</title>
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <style>
+        body {
+            font-family: 'Montserrat', 'Arial';
+        }
+    </style>
+    <link rel="stylesheet" href="popup.css" />
+</head>
+
+<body>
+    <div class="container">
+        <img id="popupLogo" src="assets/name.png" alt="logo">
+        <center>Generate random recipe for your meal! </center>
+        <hr class="line">
+        <button class="button" id="randomRecipe" type="button">Random Recipe!</button>
+        <div id="recipeTitle"></div>
+        <img id="recipeImg" alt="recipe image">
+        <img id="priceImg" src="assets/logo.png" alt="logo">
+        <span id="recipePrice"></span>
+        <div id="ingredientsList"></div>
+        <hr id="line1" class="line">
+        <div id="recipeInstruc"></div>
+        <hr id="line2" class="line">
+    </div>
+</body>
+<script type="text/javascript" src="popup.js"></script>
+
+</html>
