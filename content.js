@@ -59,7 +59,7 @@ function onWindowLoad() {
 	}
 }
 
-request.send();
+// request.send();
 window.onload = onWindowLoad;
 window.addEventListener("click", function () {
 	var newLink = window.location.toString();

@@ -27,7 +27,8 @@
 	"web_accessible_resources": [
 		"sidebar.css",
 		"sidebar.js",
-		"temp_logo.png"
+		"logo.png",
+		"logo-txt.png"
 	],
 	"permissions": [
 		"tabs"
