@@ -12,10 +12,10 @@ Users who are undecided about their next meal can also click on Saveory's chrome
 
 #### Pop up that appears at the side of website when it detects a food item:<br>
 <img src="/demo/side_popup.png" alt="side pop up" width=500> <br>
-<img src="/demo/side_popup1.png" alt="side pop up" width=200> 
+<img src="/demo/side_popup1.png" alt="side pop up" width=200> &ensp;
 <img src="/demo/side_popup2.png" alt="side pop up" width=200> 
 
 #### Chrome extension that generates random recipe:<br>
 <img src="/demo/extension_popup.png" alt="extension pop up" width=500> <br>
-<img src="/demo/extension_popup1.png" alt="extension pop up" width=200> 
+<img src="/demo/extension_popup1.png" alt="extension pop up" width=200> &ensp;
 <img src="/demo/extension_popup2.png" alt="extension pop up" width=200> 
