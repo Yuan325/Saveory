@@ -1,7 +1,7 @@
 var foodName;
 function grabTitle() {
 	var h1s = document.getElementsByTagName("h1");
-	if(h1s.length  > 1){
+	if (h1s.length > 1) {
 		foodName = h1s[1].innerHTML;
 		console.log(foodName);
 
@@ -12,41 +12,41 @@ function grabTitle() {
 	}
 }
 
-async function browseRecipe( foodName ){
+async function browseRecipe(foodName) {
 	let url = "https://api.spoonacular.com/recipes/complexSearch?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&number=1"
-	url += "&query="+ foodName.split(" ").join("");
+	url += "&query=" + foodName.split(" ").join("");
 	let responseid = await fetch(url);
 	let jsonid = await responseid.json();
 	let recipeid = jsonid['results'][0].id;
 
 	let searchUrl = "https://api.spoonacular.com/recipes/" + recipeid + "/information?apiKey=dbb3a7d09dac4219b02c7ffd6a1098a5&includeNutrition=false";
 	console.log(searchUrl);
-	let response = await fetch(searchUrl); 
+	let response = await fetch(searchUrl);
 	let json = await response.json();
 
 
-	let image=json.image;
-	let title=json.title;
-	let price=json.pricePerServing;
-	price = price/100;
+	let image = json.image;
+	let title = json.title;
+	let price = json.pricePerServing;
+	price = price / 100;
 	price = parseFloat(price).toFixed(2);
 	let instruction = json.analyzedInstructions[0].steps;
 	var insList = "<ol>";
-	for(ins of instruction){
-		insList+= "<li>" + ins["step"] + "</li>";
+	for (ins of instruction) {
+		insList += "<li>" + ins["step"] + "</li>";
 	}
-	insList+="</ol>";
+	insList += "</ol>";
 
 	let ingredients = json.extendedIngredients;
 
 	var ing;
-	var food="";
-	for(ing of ingredients){
+	var food = "";
+	for (ing of ingredients) {
 		food += ing['measures']['us']['amount'];
 		food += " " + ing['measures']['us']['unitShort'];
 		food += " " + ing['name'] + "<br>";
 	}
-	
+
 	console.log("title: " + title);
 	console.log("price: " + price);
 	console.log("instruction " + insList);
@@ -66,12 +66,12 @@ function onWindowLoad() {
 		var style = document.createElement("link");
 		style.rel = "stylesheet";
 		//style.href = "chrome-extension://amejifdccflcjabhckcmecocikckafll/sidebar.css";
-		style.href = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.css";
+		style.href = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.css";
 		document.head.appendChild(style);
 
 		var javascript = document.createElement("script");
 		//javascript.src = "chrome-extension://amejifdccflcjabhckcmecocikckafll/sidebar.js";
-		javascript.src = "chrome-extension://kijkgialngobgddnhoalinmjegeafmce/sidebar.js";
+		javascript.src = "chrome-extension://jemegondjlpbhiknmcdhiiogojomffdf/sidebar.js";
 		document.head.appendChild(javascript);
 
 		var div = document.createElement("div");

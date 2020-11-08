@@ -29,7 +29,8 @@
 		"sidebar.js",
 		"logo.png",
 		"logo-txt.png",
-		"background.js"
+		"background.js",
+		"scampi.jpg"
 	],
 	"permissions": [
 		"tabs"
