@@ -1,7 +1,7 @@
 var foodName;
 function grabTitle() {
 	var h1s = document.getElementsByTagName("h1");
-	if(h1s.length  > 1){
+	if (h1s.length > 1) {
 		foodName = h1s[1].innerHTML;
 		browseRecipe(foodName);
 		return true;
@@ -108,7 +108,6 @@ var link = "";
 function onWindowLoad() {
 	link = window.location.toString();
 	if (link.includes("?ps=1")) {
-
 		var div = document.createElement("div");
 		div.id = "sidebar";
 		document.body.appendChild(div);
